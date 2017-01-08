@@ -19,7 +19,7 @@ li {
 }
 
 .completed {
-  border: 1px solid limegreen;
+  border: 2px solid limegreen;
 }
 
 .false {
@@ -67,8 +67,6 @@ input {
 
 form button {
   margin-left: 5px;
-  background: steelblue;
-  color: white;
 }
 
 button:hover {
