@@ -69,11 +69,9 @@ var TaskList = (props) => {
   });
 
   function removeElement(id) {
-    if(confirm("Are you sure?")) {
-      COLLECTION = COLLECTION.filter(task => {
-        if(task.id !== id) return task;
-      });
-    }
+    COLLECTION = COLLECTION.filter(task => {
+      if(task.id !== id) return task;
+    });
   }
 
   function handleRemoveElement(e) {
