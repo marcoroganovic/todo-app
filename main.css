@@ -16,15 +16,14 @@ li {
   margin: 5px 0;
   border-radius: 5px;
   list-style: none;
-  color: white;
 }
 
 .completed {
-  background: limegreen;
+  border: 1px solid limegreen;
 }
 
 .false {
-  background: tomato;
+  border: 1px solid tomato;
 }
 
 .container {
@@ -59,13 +58,16 @@ form {
 input,
 form button {
   padding: 5px;
-  border: 1px solid #ccc;;
   border-radius: 5px;
+}
+
+input {
+  border: 1px solid #ccc;
 }
 
 form button {
   margin-left: 5px;
-  background: lightgray;
+  background: steelblue;
   color: white;
 }
 
