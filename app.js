@@ -30,7 +30,7 @@ var Form = (props) => {
     var value = e.target[0].value;
     if(value) {
       pushTask(value);
-      pubsub.triggerEvent("render", COLLECTION);
+      jsHTML.dispatcher.dispatch("render", COLLECTION);
     }
   }
 
