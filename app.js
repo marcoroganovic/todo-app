@@ -1,10 +1,20 @@
-var COLLECTION = [
-  {id: 1,  name: "Generate some ideas", completed: true },
-  {id: 2, name: "Learn JavaScript", completed: false}, 
-  {id: 3, name: "Learn JavaScript even better", completed: false},
-  {id: 4, name: "Learn Test-Driven Development", completed: false},
-  {id: 5, name: "Build something meaningful", completed: false}
-];
+var COLLECTION;
+var $root = document.querySelector(".container");
+
+ajaxify.get({
+  url: "data.json",
+
+  success: function(data) {
+    COLLECTION = JSON.parse(data);
+    jsHTML.dispatcher.dispatch("render", COLLECTION);
+  },
+
+  failure: function(status, data) {
+    $root.innerHTML = "Loading...";
+  },
+
+  doSend: true
+});
 
 
 var Input = ()  => {
@@ -163,7 +173,5 @@ var App = (props) => {
 }
 
 jsHTML.dispatcher.subscribe("render", function(collection) {
-  jsHTML.render(App({ collection }), ".container");
+  jsHTML.render(App({ collection }), $root);
 });
-
-jsHTML.dispatcher.dispatch("render", COLLECTION);
