@@ -123,19 +123,26 @@ var DetailSpan = (props) => {
 
 var TaskDetails = (props) => {
 
-  var total = props.collection.length;
-  var completed = props.collection.reduce((count, curr) => {
-    return curr.completed ? count + 1 : count;
-  }, 0);
+  function getStats(arr) {
+    var output = {
+      total: arr.length,
+      complete: 0,
+      uncomplete: 0
+    };
 
-  var uncompleted = props.collection.reduce((count, curr) => {
-    return !curr.completed ? count + 1 : count;
-  }, 0);
+    arr.forEach(item => {
+      output[item.completed ? "complete" : "uncomplete"] += 1;
+    });
+    
+    return output;
+  }
+
+  var stats = getStats(props.collection);
 
   var buttonContent = [
-    { name: "Total", status: total },
-    { name: "Completed", status: completed },
-    { name: "Uncompleted", status: uncompleted }
+    { name: "Total", status: stats.total },
+    { name: "Completed", status: stats.complete },
+    { name: "Uncompleted", status: stats.uncomplete }
   ];
   
   var list = buttonContent.map((button) => {
