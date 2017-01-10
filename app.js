@@ -20,7 +20,9 @@
 
   function changeBackgroundColor() {
     var colors = ["steelblue", "limegreen", "deeppink", "pink",
-                  "darkgray", "aqua", "lightcoral", "royalblue"];
+                  "darkgray", "aqua", "lightcoral", "royalblue",
+                  "snow", "whitesmoke", "lightyellow", "lightsalmon",
+                  "magenta", "hotpink", "fuchsia", "ghostwhite"];
     var random = Math.round(Math.random() * colors.length);
     document.body.style.background = colors[random];
   }
