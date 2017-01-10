@@ -18,6 +18,13 @@
   });
 
 
+  function changeBackgroundColor() {
+    var colors = ["steelblue", "limegreen", "deeppink", "pink",
+                  "darkgray", "aqua", "lightcoral", "royalblue"];
+    var random = Math.round(Math.random() * colors.length);
+    document.body.style.background = colors[random];
+  }
+
   var Input = ()  => {
     return jsHTML.input({type: "text", placeholder: "Task name"}, null);
   }
@@ -174,7 +181,9 @@
   }
 
   jsHTML.dispatcher.subscribe("render", function(collection) {
+    changeBackgroundColor();
     jsHTML.render(App({ collection }), $root);
   });
 
+  changeBackgroundColor();
 })();
