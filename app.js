@@ -23,7 +23,7 @@
   }
 
   var Button = () => {
-    return jsHTML.button({}, "Add task");
+    return jsHTML.button({className: "button-primary"}, "Add task");
   }
 
   var Form = (props) => {

@@ -1,74 +1,68 @@
-* { box-sizing: border-box; }
+* { box-sizing: boder-box; }
 
 body {
-  margin: 0;
-  padding: 0;
-  font: lighter 16px/150% "Helvetica Nee", sans-serif;
+  background: pink;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+button {
+  height: 25px;
+  line-height: 25px;
+  padding: 2px 10px;
 }
 
 li {
-  padding: 5px;
-  margin: 5px 0;
-  border-radius: 5px;
   list-style: none;
 }
 
-.completed {
-  border: 2px solid limegreen;
-}
-
-.false {
-  border: 1px solid tomato;
+button.button-primary {
+  height: 38px;
+  margin-left: 10px;
+  line-height: 38px;
 }
 
 .container {
-  max-width: 640px;
+  max-width: 360px;
+  margin: 10% auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 2px 2px 2px #333;
+}
+
+form input[type="text"] {
+  max-width: 69%;
   width: 100%;
-  margin: 20px auto;
 }
 
-.details {
-  margin: 0 auto;
-  padding: 0 10px;
-  border-radius: 5px;
-  background: steelblue;
-  color: white;
-  text-align: right;
-  text-transform: lowercase;
-  font-size: 12px;
+ul li {
+  border-bottom: 1px solid #ccc;
 }
 
-.details span {
-  margin-right: 10px;
+ul li:last-child {
+  border: none;
 }
 
-.details span:last-child {
-  margin-right: 0;
-}
-
-form {
-  margin-bottom: 10px;
-}
-
-input,
-form button {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-input {
-  border: 1px solid #ccc;
-}
-
-form button {
+.complete,
+.remove {
+  text-transform: uppercase;
   margin-left: 5px;
 }
 
-button:hover {
-  cursor: pointer;
+.complete:hover {
+  border-color: limegreen;
 }
+
+.remove:hover {
+  border-color: tomato;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  text-align: center;
+}
+
