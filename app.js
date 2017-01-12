@@ -183,8 +183,10 @@
   }
 
   jsHTML.dispatcher.subscribe("render", function(collection) {
+    console.time();
     changeBackgroundColor();
     jsHTML.render(App({ collection }), $root);
+    console.timeEnd();
   });
 
   changeBackgroundColor();
